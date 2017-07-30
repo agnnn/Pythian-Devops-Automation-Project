@@ -12,7 +12,7 @@ Requirements / Tested on
 
 ```
 $ git clone https://github.com/agnnn/Pythian-Devops-Automation-Project.git
-$ cd pythian_devops_automation_project
+$ cd Pythian-Devops-Automation-Project
 $ vagrant up
 ```
 # Access to Apache Server
