@@ -11,7 +11,7 @@ Requirements/Tested on
 # How to use
 
 ```
-$ git clone https://github.com/agnnn/pythian_devops_automation_project
+$ git clone https://github.com/agnnn/pythian_devops_automation_project.git
 $ cd pythian_devops_automation_project
 $ vagrant up
 ```
