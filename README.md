@@ -1,6 +1,6 @@
 # Pythian DevOps Cloud Automation Engineer Project
 
-This repository consist of Vagrantfile required for Devops automation project. 
+This repository consist of Vagrantfile required for Devops automation engineer project in Pythian. 
 
 Requirements/Tested on 
 1) VirtualBox Version 5.1.14 r112924
