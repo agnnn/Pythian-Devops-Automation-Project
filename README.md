@@ -15,3 +15,7 @@ $ git clone https://github.com/agnnn/pythian_devops_automation_project
 $ cd pythian_devops_automation_project
 $ vagrant up
 ```
+# Access to Apache Server
+```
+URL: http://localhost:8080
+```
