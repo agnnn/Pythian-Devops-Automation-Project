@@ -9,7 +9,7 @@ We need to install few pieces of software,
 1. Install Virtualbox
 2. Install vagrant
 
-# Tested on: 
+# Tested on 
 1. VirtualBox Version 5.1.14 r112924
 2. Vagrant Version 1.9.7
 
