@@ -24,7 +24,7 @@ $ git clone https://github.com/agnnn/Pythian-Devops-Automation-Project.git
 # Change directory to the root of the project (where the vagrant file is located)
 $ cd Pythian-Devops-Automation-Project
 
-# This command creates and configures guest machines according to our Vagrantfile
+# start a new virtual machine based on the Vagrantfile in our current directory.
 $ vagrant up
 ```
 # Access to Apache Server
