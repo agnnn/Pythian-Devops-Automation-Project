@@ -1,0 +1,31 @@
+VAGRANTFILE_API_VERSION = "2"
+
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+  config.vm.box = "ubuntu/xenial64"
+  config.vm.network "private_network", ip: "192.168.33.10"
+  config.vm.network "forwarded_port", guest: 80, host: 8080
+
+  config.vm.provision :ansible do |ansible|
+    ansible.playbook = "myplaybook.yml"
+  end
+
+# Using Shell script for provisioning Packages
+config.vm.provision "shell", inline: <<-SHELL
+
+echo "-----------------------------------------------------------------------"
+echo "<<<<<<<<        Checking Ownership and Permissions           >>>>>>>>>>"
+echo "-----------------------------------------------------------------------"
+cd /opt
+ls -l
+# Testing if all the service is working
+echo "---------------------------------------------------------------"
+echo "<<<<<<<<        Checking Installed Packages          >>>>>>>>>>"
+echo "---------------------------------------------------------------"
+dpkg --get-selections git
+dpkg --get-selections mysql-server
+dpkg --get-selections apache2
+
+echo "Done installing your virtual machine!"
+SHELL
+
+end

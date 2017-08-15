@@ -1,0 +1,29 @@
+---
+- hosts: all
+  sudo: true
+  gather_facts: False
+
+
+  pre_tasks:
+    - raw: test -e /usr/bin/python || (apt -y update && apt install -y python-minimal)
+    - setup:
+  
+    - name: <-- Clone a private repository into /opt/code  -->
+      git:
+        repo: https://github.com/agnnn/Pythian-Devops-Automation-Project.git
+        dest: /opt/code
+        key_file: ~/.ssh/deployment_key
+
+
+  tasks:
+    - name: Create user
+      user: name=pythian shell=/bin/zsh
+    - name: <-- Updating apt cache -->
+      apt: update_cache=yes
+    - name: <-- Installing apache server -->
+      apt: name=apache2 state=present
+    - name: <-- Installing git -->
+      apt: name=git state=present
+    - name: <-- Install MySQL -->
+      apt: name=mysql-server state=present
+    - file: path=/opt/code owner=pythian group=pythian mode=0644 
